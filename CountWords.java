@@ -40,6 +40,15 @@ public class CountWords {
 
 	}
 
+	public Map<String, Integer>  get20MostFrequentWords() {
+
+
+	}
+
+	public Map<String, Integer> get20LeastFrequentWords() {
+	
+	}
+
 	public static String parseBookIntoString() {
 		BufferedReader br = null;
 
