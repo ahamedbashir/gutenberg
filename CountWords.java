@@ -15,12 +15,24 @@ public class CountWords {
 		// store all words into a String array
 		String[] words = text.split(" ");
 		// create a hashmap with the words as both  key and value
-		HashMap<String, String> wordMap = new HashMap<String, String>();
+		HashMap<String, String> uniqueWordMap = new HashMap<String, String>();
 		int numberOfUniqueWords = 0;
 		// iterate through the words array and remove the punctuation
 		// before adding to the hashmap
 
-
+		for(String str: words) {
+			String sanitizedString = str.toLowerCase()
+				.replaceAll("\"", "")
+				.replaceAll("\\?", "")
+				.replaceAll("\\.", "")
+				.replaceAll("!", "")
+				.replaceAll(";", "")
+				.replaceAll(":", "");
+			if( !uniqueWordMap.contains(sanitizedString)) {
+				numberOfUniqueWords ++;
+				uniqueWordMap.put(sanitizedString, sanitizedString);
+			}
+		}
 
 		// return the count of keys
 
